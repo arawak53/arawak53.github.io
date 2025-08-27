@@ -1,0 +1,182 @@
+body {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.background-image {
+    background-image: url(../image/background.png);
+    background-size: 100%;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: blur(20px);
+}
+
+.header {
+    padding: 0px;
+    
+    .navbar {
+        //max-width: 1140px;
+        margin: 0 auto;
+        background-color: rgba(0,0,0,0.5);
+        
+        padding-left: 3%;
+        
+        .nav-item {
+            padding: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+$slider-height: 600px;
+
+.slider {
+    height: $slider-height;
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: stretch;
+
+    .item {
+        flex-basis: 20%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-position: center;
+        background-size: cover;
+
+        transition: all 0.5s;
+
+        filter: blur(0px);
+        color: #ffffff;
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+            margin-bottom: 0;
+            width: 100%;
+            padding: 30px;
+            background-color: rgba(0,0,0,0.5);
+            opacity: 1;
+        }
+
+        .only-active {
+            opacity: 0;
+            transition: all 0.5s;
+        }
+    }
+
+    .active {
+        flex-basis: 200%;
+        filter: none;
+
+        .only-active {
+            opacity: 1;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.container {
+    max-width: 1280px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.main {
+    //display: flex;
+    padding: 0px;
+    box-shadow: none;
+    
+    h1 {
+        padding-bottom: 20px;
+    }
+    
+    .middle, .right {
+        padding-bottom: 0px;
+        padding-top: 20px;
+        //background-color: rgba(225,225,225,0.9);
+        //box-shadow: rgba(0, 0, 0, 0.12) 0px 0.07px 0.14px 0px, rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;
+    }
+    
+    $height-block: 500px;
+    
+    .middle {
+        
+        .block {
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            margin-bottom: 50px;
+            height: $height-block;
+            background-color: rgba(255,255,255,1);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+            //box-shadow: rgba(0, 0, 0, 0.12) 0px 0.07px 0.14px 0px, rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;
+
+            
+            .text {
+                padding-right: 20px;
+                padding-left: 20px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-basis: 1000px;
+                
+                h2 {
+                    padding-top: 10px;
+                    text-align: right;
+                }
+                
+                .description {
+                    overflow: hidden;
+                    position: relative;
+                    
+                    &:hover {
+                        
+                        &::after {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            
+            .preview {
+                height: 100%;
+                flex-basis: 1000px;
+                margin-right: 0px;
+                background-position: center;
+                background-size: cover;
+            }
+        }
+        
+        .block:nth-of-type(even) {
+            .text {
+                order: 1;
+                    
+                h2 {
+                    text-align: left;
+                }
+            }
+            .preview {
+                order: 0;
+            }
+        }
+    }
+}
+
+.space {
+    height: 50px;
+}

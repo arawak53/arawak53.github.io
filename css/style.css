@@ -1,0 +1,143 @@
+body {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.background-image {
+  background-image: url(../image/background.png);
+  background-size: 100%;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  filter: blur(20px);
+}
+
+.header {
+  padding: 0px;
+}
+.header .navbar {
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-left: 3%;
+}
+.header .navbar .nav-item {
+  padding: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.slider {
+  height: 600px;
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  /*justify-content: center;*/
+  align-items: stretch;
+}
+.slider .item {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.5s;
+  filter: blur(0px);
+  color: #ffffff;
+}
+.slider .item h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: 0;
+  width: 100%;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+.slider .item .only-active {
+  opacity: 0;
+  transition: all 0.5s;
+}
+.slider .active {
+  flex-basis: 200%;
+  filter: none;
+}
+.slider .active .only-active {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .slider {
+    flex-direction: column;
+  }
+}
+
+.container {
+  max-width: 1280px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.main {
+  padding: 0px;
+  box-shadow: none;
+}
+.main h1 {
+  padding-bottom: 20px;
+}
+.main .middle, .main .right {
+  padding-bottom: 0px;
+  padding-top: 20px;
+}
+.main .middle .block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-bottom: 50px;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+.main .middle .block .text {
+  padding-right: 20px;
+  padding-left: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 1000px;
+}
+.main .middle .block .text h2 {
+  padding-top: 10px;
+  text-align: right;
+}
+.main .middle .block .text .description {
+  overflow: hidden;
+  position: relative;
+}
+.main .middle .block .text .description:hover::after {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.main .middle .block .preview {
+  height: 100%;
+  flex-basis: 1000px;
+  margin-right: 0px;
+  background-position: center;
+  background-size: cover;
+}
+.main .middle .block:nth-of-type(even) .text {
+  order: 1;
+}
+.main .middle .block:nth-of-type(even) .text h2 {
+  text-align: left;
+}
+.main .middle .block:nth-of-type(even) .preview {
+  order: 0;
+}
+
+.space {
+  height: 50px;
+}/*# sourceMappingURL=style.css.map */
